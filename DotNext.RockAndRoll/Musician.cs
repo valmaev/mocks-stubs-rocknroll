@@ -20,5 +20,10 @@
         {
             get { return _lastName; }
         }
+
+        public string FullName
+        {
+            get { return FirstName + " " + LastName; }
+        }
     }
 }

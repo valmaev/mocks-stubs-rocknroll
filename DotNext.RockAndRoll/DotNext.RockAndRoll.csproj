@@ -34,6 +34,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BassGuitar.cs" />
+    <Compile Include="Drums.cs" />
     <Compile Include="Guitar.cs" />
     <Compile Include="IInstrument.cs" />
     <Compile Include="InstrumentStatus.cs" />

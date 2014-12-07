@@ -13,7 +13,10 @@ namespace DotNext.RockAndRoll.UnitTests
             string firstName,
             string lastName)
         {
-            var sut = MusicianFactory.Create(firstName, lastName);
+            var sut = new MusicianBuilder()
+                .WithFirstName(firstName)
+                .WithLastName(lastName)
+                .Build();
             Assert.Equal(firstName + " " + lastName, sut.FullName);
         }
     }

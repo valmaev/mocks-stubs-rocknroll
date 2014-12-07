@@ -1,22 +1,18 @@
-﻿using Xunit;
-using Xunit.Extensions;
+﻿using Ploeh.AutoFixture;
+using Xunit;
 
 namespace DotNext.RockAndRoll.UnitTests
 {
     public class MusicianTestCase
     {
-        [Theory]
-        [InlineData("foo", "bar")]
-        [InlineData("bar", "baz")]
-        [InlineData("baz", "qux")]
-        public void FullName_Always_ShouldReturnConcatenationOfNames(
-            string firstName,
-            string lastName)
+        [Fact]
+        public void FullName_Always_ShouldReturnConcatenationOfNames()
         {
-            var sut = new MusicianBuilder()
-                .WithFirstName(firstName)
-                .WithLastName(lastName)
-                .Build();
+            var fixture = new Fixture();
+            var firstName = fixture.Create<string>();
+            var lastName = fixture.Create<string>();
+            var sut = new Musician(firstName, lastName);
+
             Assert.Equal(firstName + " " + lastName, sut.FullName);
         }
     }

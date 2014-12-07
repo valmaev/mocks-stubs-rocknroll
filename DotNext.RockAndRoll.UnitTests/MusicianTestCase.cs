@@ -9,11 +9,9 @@ namespace DotNext.RockAndRoll.UnitTests
         public void FullName_Always_ShouldReturnConcatenationOfNames()
         {
             var fixture = new Fixture();
-            var firstName = fixture.Create<string>();
-            var lastName = fixture.Create<string>();
-            var sut = new Musician(firstName, lastName);
+            var sut = fixture.Create<Musician>();
 
-            Assert.Equal(firstName + " " + lastName, sut.FullName);
+            Assert.Equal(sut.FirstName + " " + sut.LastName, sut.FullName);
         }
     }
 }

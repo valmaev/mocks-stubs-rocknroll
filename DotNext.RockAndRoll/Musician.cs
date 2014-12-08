@@ -32,6 +32,10 @@ namespace DotNext.RockAndRoll
 
         public void BreakInstrument()
         {
+            if (Instrument.Status == InstrumentStatus.Broken)
+                throw new InvalidOperationException(
+                    "Hey, I can't break already broken instrument!");
+
             Instrument.Status = InstrumentStatus.Broken;
         }
     }

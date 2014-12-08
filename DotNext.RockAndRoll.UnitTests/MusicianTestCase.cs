@@ -1,20 +1,19 @@
-﻿using Ploeh.AutoFixture.Xunit;
-using Xunit;
+﻿using Xunit;
 using Xunit.Extensions;
 
 namespace DotNext.RockAndRoll.UnitTests
 {
     public class MusicianTestCase
     {
-        [Theory, AutoData]
+        [Theory, AutoMockData]
         public void FullName_Always_ShouldReturnConcatenationOfNames(
             Musician sut)
         {
             Assert.Equal(sut.FirstName + " " + sut.LastName, sut.FullName);
         }
 
-        [Theory, AutoMockData]
-        public void BreakInstrument_Always_ShouldSetStatusToBroken(
+        [Theory, ReadyToRockInstrument]
+        public void BreakInstrument_WithReadyToRockInstrument_ShouldBreakIt(
             Musician sut)
         {
             sut.BreakInstrument();

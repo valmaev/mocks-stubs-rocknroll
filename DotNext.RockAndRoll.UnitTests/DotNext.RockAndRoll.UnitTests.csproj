@@ -53,7 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoMockDataAttribute.cs" />
+    <Compile Include="DataAttributes.cs" />
     <Compile Include="MusicianBuilder.cs" />
     <Compile Include="MusicianFactory.cs" />
     <Compile Include="MusicianTestCase.cs" />

@@ -7,10 +7,9 @@ namespace DotNext.RockAndRoll.UnitTests
 {
     public class AutoMockDataAttribute : AutoDataAttribute
     {
-        public AutoMockDataAttribute()
-            : base(
-                new Fixture().Customize(
-                    new AutoNSubstituteCustomization())) {}
+        public AutoMockDataAttribute() : base(
+            new Fixture().Customize(
+                new AutoNSubstituteCustomization())) {}
     }
 
     public class ReadyToRockInstrumentAttribute : AutoMockDataAttribute

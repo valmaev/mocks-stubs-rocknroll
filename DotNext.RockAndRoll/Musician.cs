@@ -28,7 +28,7 @@ namespace DotNext.RockAndRoll
             get { return FirstName + " " + LastName; }
         }
 
-        public Guitar Instrument { get; set; }
+        public IInstrument Instrument { get; set; }
 
         public void BreakInstrument()
         {

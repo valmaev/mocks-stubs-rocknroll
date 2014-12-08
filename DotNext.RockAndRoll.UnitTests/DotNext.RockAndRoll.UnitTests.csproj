@@ -30,8 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NSubstitute">
+      <HintPath>..\packages\NSubstitute.1.8.0.0\lib\net45\NSubstitute.dll</HintPath>
+    </Reference>
     <Reference Include="Ploeh.AutoFixture">
       <HintPath>..\packages\AutoFixture.3.21.1\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture.AutoNSubstitute">
+      <HintPath>..\packages\AutoFixture.AutoNSubstitute.3.21.1\lib\net40\Ploeh.AutoFixture.AutoNSubstitute.dll</HintPath>
     </Reference>
     <Reference Include="Ploeh.AutoFixture.Xunit">
       <HintPath>..\packages\AutoFixture.Xunit.3.21.1\lib\net40\Ploeh.AutoFixture.Xunit.dll</HintPath>
@@ -47,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoMockDataAttribute.cs" />
     <Compile Include="MusicianBuilder.cs" />
     <Compile Include="MusicianFactory.cs" />
     <Compile Include="MusicianTestCase.cs" />

@@ -1,16 +1,15 @@
-﻿using Ploeh.AutoFixture;
+﻿using Ploeh.AutoFixture.Xunit;
 using Xunit;
+using Xunit.Extensions;
 
 namespace DotNext.RockAndRoll.UnitTests
 {
     public class MusicianTestCase
     {
-        [Fact]
-        public void FullName_Always_ShouldReturnConcatenationOfNames()
+        [Theory, AutoData]
+        public void FullName_Always_ShouldReturnConcatenationOfNames(
+            Musician sut)
         {
-            var fixture = new Fixture();
-            var sut = fixture.Create<Musician>();
-
             Assert.Equal(sut.FirstName + " " + sut.LastName, sut.FullName);
         }
     }

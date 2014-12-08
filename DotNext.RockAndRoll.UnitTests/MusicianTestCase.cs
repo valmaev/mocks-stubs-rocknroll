@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 using Xunit.Extensions;
 
 namespace DotNext.RockAndRoll.UnitTests
@@ -18,6 +19,14 @@ namespace DotNext.RockAndRoll.UnitTests
         {
             sut.BreakInstrument();
             Assert.Equal(InstrumentStatus.Broken, sut.Instrument.Status);
+        }
+
+        [Theory, BrokenInstrument]
+        public void BreakInstrument_WithBrokenInstrument_ShouldThrow(
+            Musician sut)
+        {
+            Assert.Throws<InvalidOperationException>(
+                () => sut.BreakInstrument());
         }
     }
 }

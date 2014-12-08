@@ -22,4 +22,14 @@ namespace DotNext.RockAndRoll.UnitTests
             Fixture.Inject(instrument);
         }
     }
+
+    public class BrokenInstrumentAttribute : AutoMockDataAttribute
+    {
+        public BrokenInstrumentAttribute()
+        {
+            var instrument = Substitute.For<IInstrument>();
+            instrument.Status = InstrumentStatus.Broken;
+            Fixture.Inject(instrument);
+        }
+    }
 }

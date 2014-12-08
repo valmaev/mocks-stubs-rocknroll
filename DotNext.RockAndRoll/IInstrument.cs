@@ -2,6 +2,6 @@
 {
     public interface IInstrument
     {
-        void BreakInstrument();
+        InstrumentStatus Status { get; set; }
     }
 }

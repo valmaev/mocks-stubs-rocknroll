@@ -2,8 +2,6 @@
 {
     public class Drums : IInstrument
     {
-        public void BreakInstrument()
-        {
-        }
+        public InstrumentStatus Status { get; set; }
     }
 }

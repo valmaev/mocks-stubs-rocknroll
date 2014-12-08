@@ -1,4 +1,6 @@
-﻿namespace DotNext.RockAndRoll
+﻿using System;
+
+namespace DotNext.RockAndRoll
 {
     public class Musician
     {
@@ -24,6 +26,13 @@
         public string FullName
         {
             get { return FirstName + " " + LastName; }
+        }
+
+        public Guitar Instrument { get; set; }
+
+        public void BreakInstrument()
+        {
+            Instrument.Status = InstrumentStatus.Broken;
         }
     }
 }

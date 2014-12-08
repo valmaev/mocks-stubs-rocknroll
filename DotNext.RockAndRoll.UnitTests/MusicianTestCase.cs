@@ -12,5 +12,13 @@ namespace DotNext.RockAndRoll.UnitTests
         {
             Assert.Equal(sut.FirstName + " " + sut.LastName, sut.FullName);
         }
+
+        [Theory, AutoData]
+        public void BreakInstrument_Always_ShouldSetStatusToBroken(
+            Musician sut)
+        {
+            sut.BreakInstrument();
+            Assert.Equal(InstrumentStatus.Broken, sut.Instrument.Status);
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace DotNext.RockAndRoll
 {
-    public class Guitar :IInstrument
+    public class Guitar : IInstrument
     {
         private readonly string _modelName;
         private readonly int _stringsCount;

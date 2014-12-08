@@ -1,4 +1,5 @@
 ﻿using System;
+using Ploeh.AutoFixture.Idioms;
 using Xunit;
 using Xunit.Extensions;
 
@@ -6,6 +7,13 @@ namespace DotNext.RockAndRoll.UnitTests
 {
     public class MusicianTestCase
     {
+        [Theory, AutoMockData]
+        public void AllMembers_Always_ShouldHaveNullGuards(
+            GuardClauseAssertion assertion)
+        {
+            assertion.Verify(typeof (Musician));
+        }
+
         [Theory, AutoMockData]
         public void FullName_Always_ShouldReturnConcatenationOfNames(
             Musician sut)

@@ -6,9 +6,15 @@ namespace DotNext.RockAndRoll
     {
         private readonly string _firstName;
         private readonly string _lastName;
+        private IInstrument _instrument;
 
         public Musician(string firstName, string lastName)
         {
+            if (firstName == null)
+                throw new ArgumentNullException("firstName");
+            if (lastName == null)
+                throw new ArgumentNullException("lastName");
+
             _firstName = firstName;
             _lastName = lastName;
         }
@@ -28,7 +34,17 @@ namespace DotNext.RockAndRoll
             get { return FirstName + " " + LastName; }
         }
 
-        public IInstrument Instrument { get; set; }
+        public IInstrument Instrument
+        {
+            get { return _instrument; }
+            set
+            {
+                if (value == null)
+                    throw new ArgumentNullException("value");
+
+                _instrument = value;
+            }
+        }
 
         public void BreakInstrument()
         {
